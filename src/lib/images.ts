@@ -2,8 +2,6 @@ function unsplash(id: string, width = 1600, quality = 80) {
   return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${width}&q=${quality}`;
 }
 
-export const heroImage = unsplash("1600596542815-ffad4c1539a9", 2000, 85);
-
 export const projectImages: Record<string, string> = {
   "horizon-residence": unsplash("1600585154340-be6161a56a0c", 1400),
   "aurora-office-tower": unsplash("1486406146926-c627a92ad1ab", 1400),

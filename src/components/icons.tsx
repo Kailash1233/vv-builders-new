@@ -10,6 +10,58 @@ export function ArrowIcon({ className }: IconProps) {
   );
 }
 
+export function MedalIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <circle cx="12" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.3" />
+      <path
+        d="M12 6.8l1.1 2.3 2.5.4-1.8 1.8.4 2.5-2.2-1.2-2.2 1.2.4-2.5-1.8-1.8 2.5-.4z"
+        stroke="currentColor"
+        strokeWidth="1.1"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function UsersIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <circle cx="9" cy="7.5" r="2.75" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M3.5 18c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      <circle cx="16.5" cy="8.5" r="2" stroke="currentColor" strokeWidth="1.1" />
+      <path d="M15.8 12.7c2.4.4 4.2 2.5 4.2 5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function AwardIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <circle cx="12" cy="8.5" r="5.5" stroke="currentColor" strokeWidth="1.3" />
+      <path d="m9.2 7.8 1.8 1.8 3.3-3.6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.5 13 7 21l5-2.6 5 2.6-1.5-8" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function DotsIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <circle cx="6" cy="12" r="1.4" fill="currentColor" />
+      <circle cx="12" cy="12" r="1.4" fill="currentColor" />
+      <circle cx="18" cy="12" r="1.4" fill="currentColor" />
+    </svg>
+  );
+}
+
+export const statIcons = {
+  medal: MedalIcon,
+  building: BuildingIcon,
+  users: UsersIcon,
+  award: AwardIcon,
+};
+
 export function CompassIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

@@ -26,10 +26,10 @@ export const site = {
 };
 
 export const stats = [
-  { value: "15+", label: "Years of Experience" },
-  { value: "320+", label: "Projects Completed" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "25+", label: "Industry Awards" },
+  { value: "15+", label: "Years of Experience", icon: "medal" as const },
+  { value: "320+", label: "Projects Completed", icon: "building" as const },
+  { value: "98%", label: "Client Satisfaction", icon: "users" as const },
+  { value: "25+", label: "Industry Awards", icon: "award" as const },
 ];
 
 export type Service = {
