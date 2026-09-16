@@ -24,7 +24,12 @@ export function Footer() {
   return (
     <footer className="relative bg-navy-950 text-cream-100 overflow-hidden grain">
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden md:block w-1/2 opacity-[0.12]">
-        <svg viewBox="0 0 400 300" className="h-full w-full" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+        <svg
+          viewBox="0 0 400 300"
+          className="h-full w-full"
+          preserveAspectRatio="xMaxYMid slice"
+          aria-hidden="true"
+        >
           <g stroke="#c6a057" strokeWidth="1" fill="none">
             <rect x="40" y="140" width="60" height="140" />
             <rect x="110" y="90" width="50" height="190" />
@@ -33,10 +38,22 @@ export function Footer() {
             <rect x="315" y="120" width="60" height="160" />
             <line x1="0" y1="280" x2="400" y2="280" />
             {Array.from({ length: 6 }).map((_, i) => (
-              <line key={`h1-${i}`} x1="45" y1={150 + i * 20} x2="95" y2={150 + i * 20} />
+              <line
+                key={`h1-${i}`}
+                x1="45"
+                y1={150 + i * 20}
+                x2="95"
+                y2={150 + i * 20}
+              />
             ))}
             {Array.from({ length: 8 }).map((_, i) => (
-              <line key={`h2-${i}`} x1="255" y1={70 + i * 25} x2="300" y2={70 + i * 25} />
+              <line
+                key={`h2-${i}`}
+                x1="255"
+                y1={70 + i * 25}
+                x2="300"
+                y2={70 + i * 25}
+              />
             ))}
           </g>
         </svg>
@@ -64,30 +81,52 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-cream-100/80">
               <li className="flex items-start gap-3">
                 <MailIcon className="w-4 h-4 mt-0.5 text-gold-400 shrink-0" />
-                <a href={`mailto:${site.email}`} className="hover:text-cream-50">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="hover:text-cream-50"
+                >
                   {site.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <PhoneIcon className="w-4 h-4 mt-0.5 text-gold-400 shrink-0" />
-                <a href={`tel:${site.phoneRaw}`} className="hover:text-cream-50">
+                <a
+                  href={`tel:${site.phoneRaw}`}
+                  className="hover:text-cream-50"
+                >
                   {site.phone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <PinIcon className="w-4 h-4 mt-0.5 text-gold-400 shrink-0" />
                 <span>
-                  {site.address.street}, {site.address.city}, {site.address.region}{" "}
-                  {site.address.postal}
+                  {site.address.street}, {site.address.city},{" "}
+                  {site.address.region} {site.address.postal}
                 </span>
               </li>
             </ul>
             <div className="flex items-center gap-4 mt-6">
               {[
-                { Icon: LinkedInIcon, href: site.social.linkedin, label: "LinkedIn" },
-                { Icon: InstagramIcon, href: site.social.instagram, label: "Instagram" },
-                { Icon: PinterestIcon, href: site.social.pinterest, label: "Pinterest" },
-                { Icon: TwitterIcon, href: site.social.twitter, label: "Twitter / X" },
+                {
+                  Icon: LinkedInIcon,
+                  href: site.social.linkedin,
+                  label: "LinkedIn",
+                },
+                {
+                  Icon: InstagramIcon,
+                  href: site.social.instagram,
+                  label: "Instagram",
+                },
+                {
+                  Icon: PinterestIcon,
+                  href: site.social.pinterest,
+                  label: "Pinterest",
+                },
+                {
+                  Icon: TwitterIcon,
+                  href: site.social.twitter,
+                  label: "Twitter / X",
+                },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}
@@ -106,13 +145,18 @@ export function Footer() {
           <div>
             <Logo variant="light" />
             <p className="mt-5 text-sm text-cream-100/70 max-w-xs">
-              We design and build thoughtful spaces that elevate how people live, work, and
-              connect.
+              V.V Builders is a builders and construction company based in
+              Padappai, Tambaram, Chennai, Tamil Nadu, working on residential
+              construction, villas, renovation and home extensions across South
+              Chennai.
             </p>
             <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
               {sitemap.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-cream-100/80 hover:text-gold-400">
+                  <Link
+                    href={item.href}
+                    className="text-cream-100/80 hover:text-gold-400"
+                  >
                     {item.label}
                   </Link>
                 </li>

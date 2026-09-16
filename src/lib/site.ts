@@ -1,27 +1,35 @@
 export const site = {
-  name: "VV Builders",
-  legalName: "VV Builders Pvt. Ltd.",
-  shortName: "VV Builders",
+  name: "V.V Builders",
+  legalName: "V.V Builders",
+  shortName: "V.V Builders",
+
   tagline: "We Build Timeless Spaces. Built Around You.",
+
   description:
-    "VV Builders is an architecture and construction studio delivering bespoke residential, commercial, and interior projects — from concept to completion, engineered to last.",
-  url: "https://www.vvbuilders.com",
-  email: "hello@vvbuilders.com",
-  phone: "+1 (212) 555-0198",
-  phoneRaw: "+12125550198",
+    "V.V Builders is a builders and construction company based in Padappai, Tambaram, Chennai, specializing in residential construction, villas, renovation, and home extensions across South Chennai.",
+
+  url: "https://www.vvbuilders.co.in",
+
+  email: "info@vvbuilders.co.in",
+
+  phone: "+91 95436 06050",
+  phoneRaw: "+919543606050",
+
   address: {
-    street: "123 Design Avenue",
-    city: "New York",
-    region: "NY",
-    postal: "10001",
-    country: "US",
+    street: "Padappai",
+    city: "Tambaram",
+    region: "Tamil Nadu",
+    postal: "",
+    country: "India",
   },
+
   founded: "2009",
+
   social: {
-    linkedin: "https://www.linkedin.com/company/vvbuilders",
-    instagram: "https://www.instagram.com/vvbuilders",
-    pinterest: "https://www.pinterest.com/vvbuilders",
-    twitter: "https://twitter.com/vvbuilders",
+    linkedin: "",
+    instagram: "",
+    pinterest: "",
+    twitter: "",
   },
 };
 
@@ -45,7 +53,8 @@ export const services: Service[] = [
   {
     slug: "architecture",
     name: "Architecture",
-    shortDescription: "Concept-driven designs that blend creativity and functionality.",
+    shortDescription:
+      "Concept-driven designs that blend creativity and functionality.",
     description:
       "Our architecture studio translates ambition into buildable form. Every concept begins with site, light, and how people actually move through a space, then develops through iterative modeling, material study, and code-aware detailing into a design that is as functional as it is expressive.",
     icon: "compass",
@@ -87,7 +96,8 @@ export const services: Service[] = [
   {
     slug: "interiors",
     name: "Interiors",
-    shortDescription: "Beautiful, functional interiors tailored to your lifestyle.",
+    shortDescription:
+      "Beautiful, functional interiors tailored to your lifestyle.",
     description:
       "Our interiors team shapes the experience inside every structure we build — material palettes, lighting, millwork, and furnishing plans that feel considered, livable, and unmistakably yours.",
     icon: "sofa",
@@ -158,7 +168,8 @@ export const projects: Project[] = [
     category: "Residential",
     year: "2023",
     size: "5,400 sq ft",
-    summary: "A courtyard villa balancing indoor-outdoor living with Texas heat.",
+    summary:
+      "A courtyard villa balancing indoor-outdoor living with Texas heat.",
     description:
       "Edgewood Villa wraps a shaded central courtyard with deep overhangs, cross-ventilated living spaces, and locally sourced limestone, delivering a resilient home tuned to its climate without sacrificing openness.",
     featured: true,
@@ -291,7 +302,8 @@ export const faqs = [
       "VV Builders takes on residential, commercial, and interiors projects nationwide, with active project teams currently based in New York, Los Angeles, Austin, Seattle, Denver, and Chicago.",
   },
   {
-    question: "How long does a typical project take, from design to completion?",
+    question:
+      "How long does a typical project take, from design to completion?",
     answer:
       "Timelines vary by scope. A custom home typically runs 10–16 months from initial concept to move-in, while commercial builds and multifamily developments range from 14–30 months depending on size and permitting.",
   },
