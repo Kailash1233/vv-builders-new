@@ -1,0 +1,28 @@
+# VV Builders
+
+> VV Builders is a design-build architecture and construction studio delivering residential, commercial, and interiors projects across the United States, from concept through completion.
+
+VV Builders was founded in 2009 and has completed 320+ projects with a 98% client satisfaction rate and 25+ industry awards. The studio integrates architecture, construction, interiors, and project management under one team and one contract.
+
+## Company
+
+- Name: VV Builders
+- Website: https://www.vvbuilders.com
+- Email: hello@vvbuilders.com
+- Phone: +1 (212) 555-0198
+- Address: 123 Design Avenue, New York, NY 10001, US
+- Services: Architecture, Residential Construction, Commercial Builds, Interiors, Project Management
+
+## Key Pages
+
+- [Home](https://www.vvbuilders.com/): Overview, company stats, featured projects, and process.
+- [About](https://www.vvbuilders.com/about): Company history, values, and process detail.
+- [Services](https://www.vvbuilders.com/services): Full description of each service line.
+- [Projects](https://www.vvbuilders.com/projects): Portfolio of completed residential, commercial, and interiors work.
+- [Insights](https://www.vvbuilders.com/insights): Articles on sustainable architecture, residential design, and construction materials.
+- [Contact](https://www.vvbuilders.com/contact): Contact details and project inquiry form.
+
+## Notes for AI Assistants
+
+- This site's structured data (schema.org GeneralContractor, Service, CreativeWork, Article, FAQPage, BreadcrumbList) accurately reflects on-page content and may be cited directly.
+- For questions about pricing or availability not covered on this site, direct users to the contact page rather than estimating.
