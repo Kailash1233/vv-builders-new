@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BuildingArt } from "@/components/BuildingArt";
 import { ArrowIcon } from "@/components/icons";
 import type { Article } from "@/lib/site";
+import { articleImages } from "@/lib/images";
 
 export function ArticleCard({ article, variant = 0 }: { article: Article; variant?: number }) {
   const formattedDate = new Date(article.date).toLocaleDateString("en-US", {
@@ -13,7 +14,12 @@ export function ArticleCard({ article, variant = 0 }: { article: Article; varian
   return (
     <Link href={`/insights/${article.slug}`} className="group block">
       <div className="relative h-48 rounded-lg overflow-hidden">
-        <BuildingArt variant={variant} className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        <BuildingArt
+          variant={variant}
+          photo={articleImages[article.slug]}
+          alt={article.title}
+          className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105"
+        />
         <span className="absolute top-3 left-3 text-[10px] uppercase tracking-[0.2em] bg-navy-950/70 text-gold-300 px-3 py-1.5 rounded-full">
           {article.category}
         </span>

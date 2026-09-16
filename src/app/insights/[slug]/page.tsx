@@ -8,6 +8,7 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { ArrowIcon } from "@/components/icons";
 import { articles, site } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { articleImages } from "@/lib/images";
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
@@ -97,7 +98,12 @@ export default async function ArticleDetailPage({
 
       <article className="bg-cream-50 py-20">
         <div className="container-px max-w-3xl mx-auto">
-          <BuildingArt variant={variant} className="h-72 sm:h-96 rounded-lg mb-12" />
+          <BuildingArt
+            variant={variant}
+            photo={articleImages[article.slug]}
+            alt={article.title}
+            className="h-72 sm:h-96 rounded-lg mb-12"
+          />
           <div className="prose-content space-y-6 text-ink-700 leading-relaxed text-[17px]">
             {article.content.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>

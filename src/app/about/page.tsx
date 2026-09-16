@@ -6,6 +6,7 @@ import { BuildingArt } from "@/components/BuildingArt";
 import { CheckIcon } from "@/components/icons";
 import { stats, process, site } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { aboutImage } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -80,7 +81,12 @@ export default function AboutPage() {
               managers who carry each project from first sketch to final walkthrough.
             </p>
           </div>
-          <BuildingArt variant={2} className="h-80 lg:h-[420px] rounded-lg" />
+          <BuildingArt
+            variant={2}
+            photo={aboutImage}
+            alt={`Inside the ${site.name} studio`}
+            className="h-80 lg:h-[420px] rounded-lg"
+          />
         </div>
       </section>
 

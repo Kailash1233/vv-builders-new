@@ -27,13 +27,16 @@ export function ServicesSection() {
         </Link>
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-white/10">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = serviceIcons[service.icon];
+            const isLast = index === services.length - 1;
             return (
               <Link
                 key={service.slug}
                 href={`/services#${service.slug}`}
-                className="group bg-navy-950 hover:bg-navy-900 p-7 flex flex-col transition-colors"
+                className={`group bg-navy-950 hover:bg-navy-900 p-7 flex flex-col transition-colors ${
+                  isLast ? "sm:col-span-2 lg:col-span-1" : ""
+                }`}
               >
                 <Icon className="w-8 h-8 text-gold-400" />
                 <h3 className="font-display text-lg mt-6">{service.name}</h3>

@@ -2,12 +2,18 @@ import Link from "next/link";
 import { BuildingArt } from "@/components/BuildingArt";
 import { ArrowIcon } from "@/components/icons";
 import type { Project } from "@/lib/site";
+import { projectImages } from "@/lib/images";
 
 export function ProjectCard({ project, variant = 0 }: { project: Project; variant?: number }) {
   return (
     <Link href={`/projects/${project.slug}`} className="group block">
       <div className="relative h-64 rounded-lg overflow-hidden">
-        <BuildingArt variant={variant} className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105" />
+        <BuildingArt
+          variant={variant}
+          photo={projectImages[project.slug]}
+          alt={`${project.name} — ${project.location}`}
+          className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/5 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end p-5">
           <span className="text-[10px] uppercase tracking-[0.2em] text-gold-300/90 mb-1">

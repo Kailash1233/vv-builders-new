@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
 import { site } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { contactImage } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -91,7 +92,17 @@ export default function ContactPage() {
               </li>
             </ul>
 
-            <div className="mt-10 h-56 rounded-lg bg-gradient-to-br from-navy-800 to-navy-950 relative overflow-hidden">
+            <div
+              className="mt-10 h-56 rounded-lg relative overflow-hidden"
+              style={{
+                backgroundImage: `url(${contactImage}), linear-gradient(160deg, #24304f 0%, #0f1524 100%)`,
+                backgroundSize: "cover, cover",
+                backgroundPosition: "center, center",
+              }}
+              role="img"
+              aria-label={`${site.name} studio location`}
+            >
+              <div className="absolute inset-0 bg-navy-950/40" />
               <PinIcon className="absolute inset-0 m-auto w-10 h-10 text-gold-400" />
               <div className="absolute inset-0 grain" />
             </div>

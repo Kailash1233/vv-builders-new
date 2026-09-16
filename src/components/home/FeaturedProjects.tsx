@@ -3,6 +3,7 @@ import { BuildingArt } from "@/components/BuildingArt";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArrowIcon } from "@/components/icons";
 import { projects } from "@/lib/site";
+import { projectImages } from "@/lib/images";
 
 const featured = projects.filter((p) => p.featured);
 
@@ -22,7 +23,7 @@ export function FeaturedProjects() {
           <ProjectTile project={first} variant={0} className="lg:row-span-2 lg:h-full h-72" />
           <ProjectTile project={second} variant={1} className="lg:h-full h-64" />
           <ProjectTile project={fourth} variant={3} className="lg:row-span-2 lg:h-full h-72 sm:col-span-2 lg:col-span-1" />
-          <ProjectTile project={third} variant={2} className="lg:h-full h-64" />
+          <ProjectTile project={third} variant={2} className="lg:h-full h-64 sm:col-span-2 lg:col-span-1" />
         </div>
       </div>
     </section>
@@ -43,7 +44,12 @@ function ProjectTile({
       href={`/projects/${project.slug}`}
       className={`group relative block overflow-hidden rounded-lg ${className ?? ""}`}
     >
-      <BuildingArt variant={variant} className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105" />
+      <BuildingArt
+        variant={variant}
+        photo={projectImages[project.slug]}
+        alt={`${project.name} — ${project.location}`}
+        className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/10 to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end p-5">
         <span className="text-[10px] uppercase tracking-[0.2em] text-gold-300/90 mb-1">

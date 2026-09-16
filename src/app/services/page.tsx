@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { CheckIcon, ArrowIcon, serviceIcons } from "@/components/icons";
 import { services, site } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { serviceImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -94,11 +95,18 @@ export default function ServicesPage() {
                   </Link>
                 </div>
                 <div
-                  className={`h-72 lg:h-96 rounded-lg bg-gradient-to-br from-navy-800 to-navy-950 relative overflow-hidden ${
+                  className={`relative h-72 lg:h-96 rounded-lg overflow-hidden ${
                     reversed ? "lg:order-1" : ""
                   }`}
+                  style={{
+                    backgroundImage: `url(${serviceImages[service.slug]}), linear-gradient(160deg, #24304f 0%, #0f1524 100%)`,
+                    backgroundSize: "cover, cover",
+                    backgroundPosition: "center, center",
+                  }}
+                  role="img"
+                  aria-label={service.name}
                 >
-                  <Icon className="absolute -right-6 -bottom-6 w-48 h-48 text-gold-500/10" />
+                  <div className="absolute inset-0 bg-navy-950/25" />
                   <div className="absolute inset-0 grain" />
                 </div>
               </article>

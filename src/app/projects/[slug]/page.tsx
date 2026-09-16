@@ -8,6 +8,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { ArrowIcon } from "@/components/icons";
 import { projects, site } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { projectImages } from "@/lib/images";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -89,7 +90,12 @@ export default async function ProjectDetailPage({
       <section className="bg-cream-50 py-20">
         <div className="container-px grid lg:grid-cols-[1.4fr_1fr] gap-14">
           <div>
-            <BuildingArt variant={variant} className="h-72 sm:h-96 rounded-lg" />
+            <BuildingArt
+              variant={variant}
+              photo={projectImages[project.slug]}
+              alt={`${project.name} — ${project.location}`}
+              className="h-72 sm:h-96 rounded-lg"
+            />
             <div className="mt-10">
               <h2 className="font-display text-2xl sm:text-3xl">Project Overview</h2>
               <p className="mt-4 text-ink-500 leading-relaxed">{project.description}</p>
