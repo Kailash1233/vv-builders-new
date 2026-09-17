@@ -5,10 +5,10 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { BuildingArt } from "@/components/BuildingArt";
 import { ProjectCard } from "@/components/ProjectCard";
+import { DownloadPortfolioButton } from "@/components/DownloadPortfolioButton";
 import { ArrowIcon } from "@/components/icons";
 import { projects, site } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
-import { projectImages } from "@/lib/images";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -87,12 +87,12 @@ export default async function ProjectDetailPage({
         ]}
       />
 
-      <section className="bg-cream-50 py-20">
+      <section className="bg-cream-50 py-16 sm:py-20 lg:py-24">
         <div className="container-px grid lg:grid-cols-[1.4fr_1fr] gap-14">
           <div>
             <BuildingArt
               variant={variant}
-              photo={projectImages[project.slug]}
+              photo={project.image}
               alt={`${project.name} — ${project.location}`}
               className="h-72 sm:h-96 rounded-lg"
             />
@@ -129,11 +129,16 @@ export default async function ProjectDetailPage({
               Start a Similar Project
               <ArrowIcon className="w-4 h-4" />
             </Link>
+            <DownloadPortfolioButton
+              variant="outline-dark"
+              label="Download Full Portfolio (PDF)"
+              className="mt-3 w-full justify-center"
+            />
           </aside>
         </div>
       </section>
 
-      <section className="bg-cream-100 py-20">
+      <section className="bg-cream-100 py-16 sm:py-20 lg:py-24">
         <div className="container-px">
           <h2 className="font-display text-2xl sm:text-3xl mb-10">More Projects</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">

@@ -96,7 +96,7 @@ export default async function ArticleDetailPage({
         ]}
       />
 
-      <article className="bg-cream-50 py-20">
+      <article className="bg-cream-50 py-16 sm:py-20 lg:py-24">
         <div className="container-px max-w-3xl mx-auto">
           <BuildingArt
             variant={variant}
@@ -127,7 +127,7 @@ export default async function ArticleDetailPage({
       </article>
 
       {related.length > 0 && (
-        <section className="bg-cream-100 py-20">
+        <section className="bg-cream-100 py-16 sm:py-20 lg:py-24">
           <div className="container-px">
             <h2 className="font-display text-2xl sm:text-3xl mb-10">Related Insights</h2>
             <div className="grid sm:grid-cols-2 gap-10 max-w-3xl">

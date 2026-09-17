@@ -10,7 +10,7 @@ import { contactImage } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with VV Builders to start your residential, commercial, or interiors project. Call, email, or send us your project details today.",
+    "Get in touch with V.V Builders to start your residential, renovation, or interiors project in Padappai, Tambaram, or South Chennai. Call, email, or send us your project details today.",
   alternates: { canonical: "/contact" },
 };
 
@@ -50,7 +50,7 @@ export default function ContactPage() {
         ]}
       />
 
-      <section className="bg-cream-50 py-24">
+      <section className="bg-cream-50 py-20 sm:py-24 lg:py-32">
         <div className="container-px grid lg:grid-cols-[1fr_1.2fr] gap-16">
           <div>
             <h2 className="font-display text-2xl sm:text-3xl mb-8">Contact Details</h2>
@@ -86,7 +86,8 @@ export default function ContactPage() {
                   <p className="font-medium">
                     {site.address.street}
                     <br />
-                    {site.address.city}, {site.address.region} {site.address.postal}
+                    {site.address.city}, {site.address.region}
+                    {site.address.postal ? ` ${site.address.postal}` : ""}
                   </p>
                 </div>
               </li>

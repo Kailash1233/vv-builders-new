@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { BuildingArt } from "@/components/BuildingArt";
+import { DownloadPortfolioButton } from "@/components/DownloadPortfolioButton";
 import { ArrowIcon } from "@/components/icons";
 import { projects } from "@/lib/site";
-import { projectImages } from "@/lib/images";
 
 const featured = projects.filter((p) => p.featured);
 
@@ -35,6 +35,8 @@ export function FeaturedProjects() {
               View All Projects
               <ArrowIcon className="h-4 w-4" />
             </Link>
+
+            <DownloadPortfolioButton variant="outline-dark" className="mt-3 w-fit" />
           </div>
 
           {/* Projects */}
@@ -118,7 +120,7 @@ function ProjectTile({
       {/* Image */}
       <BuildingArt
         variant={variant}
-        photo={projectImages[project.slug]}
+        photo={project.image}
         alt={`${project.name} — ${project.location}`}
         className="
           absolute

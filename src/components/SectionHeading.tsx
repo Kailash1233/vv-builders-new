@@ -25,20 +25,20 @@ export function SectionHeading({
   return (
     <div className={`${isCenter ? "text-center mx-auto max-w-2xl" : ""} ${className ?? ""}`}>
       <p
-        className={`text-[11px] font-semibold tracking-[0.24em] uppercase mb-3 ${eyebrowColor}`}
+        className={`text-[10px] sm:text-[11px] font-semibold tracking-[0.28em] uppercase mb-4 ${eyebrowColor}`}
       >
         {eyebrow}
       </p>
-      <h2 className={`font-display text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.1] text-balance ${titleColor}`}>
+      <h2 className={`font-display text-[2.25rem] leading-[1.08] sm:text-5xl lg:text-[3.1rem] text-balance ${titleColor}`}>
         {title}
       </h2>
       {cta && (
         <Link
           href={cta.href}
-          className={`mt-6 inline-flex items-center gap-2 text-[12px] tracking-[0.14em] uppercase font-semibold border px-5 py-3 transition-colors ${
+          className={`mt-7 inline-flex items-center gap-7 text-[11px] tracking-[0.14em] uppercase font-semibold border px-6 py-3.5 transition-all duration-300 ${
             tone === "dark"
-              ? "border-ink-900/20 text-ink-900 hover:bg-ink-900 hover:text-cream-50"
-              : "border-cream-50/25 text-cream-50 hover:bg-cream-50 hover:text-navy-950"
+              ? "border-ink-900/20 text-ink-900 hover:border-gold-500 hover:bg-gold-500 hover:text-navy-950"
+              : "border-cream-50/25 text-cream-50 hover:border-gold-400 hover:bg-gold-400 hover:text-navy-950"
           }`}
         >
           {cta.label}

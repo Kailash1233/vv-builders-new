@@ -35,9 +35,9 @@ export const site = {
 
 export const stats = [
   { value: "15+", label: "Years of Experience", icon: "medal" as const },
-  { value: "320+", label: "Projects Completed", icon: "building" as const },
+  { value: "150+", label: "Projects Completed", icon: "building" as const },
   { value: "98%", label: "Client Satisfaction", icon: "users" as const },
-  { value: "25+", label: "Industry Awards", icon: "award" as const },
+  { value: "10+", label: "Industry Awards", icon: "award" as const },
 ];
 
 export type Service = {
@@ -45,7 +45,7 @@ export type Service = {
   name: string;
   shortDescription: string;
   description: string;
-  icon: "compass" | "home" | "building" | "sofa" | "clipboard";
+  icon: "compass" | "home" | "renovate" | "sofa" | "clipboard";
   highlights: string[];
 };
 
@@ -80,17 +80,17 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "commercial-builds",
-    name: "Commercial Builds",
-    shortDescription: "High-performance spaces for modern businesses.",
+    slug: "renovation-home-extensions",
+    name: "Renovation & Home Extensions",
+    shortDescription: "Thoughtful upgrades that respect what's already there.",
     description:
-      "We deliver office towers, retail environments, and mixed-use developments engineered for performance and built to operate efficiently for decades — coordinated tightly with owners, tenants, and municipal stakeholders.",
-    icon: "building",
+      "From additional floors to full interior overhauls, our renovation teams work around your household's rhythm, blending new construction seamlessly with existing structures for a result that feels like it was always meant to be there.",
+    icon: "renovate",
     highlights: [
-      "Ground-up commercial construction",
-      "Tenant improvement & fit-out",
-      "Mixed-use & multifamily development",
-      "LEED & energy-code compliance",
+      "Additional floors & room extensions",
+      "Kitchen & bathroom remodels",
+      "Structural repair & waterproofing",
+      "Facade and courtyard upgrades",
     ],
   },
   {
@@ -102,7 +102,7 @@ export const services: Service[] = [
       "Our interiors team shapes the experience inside every structure we build — material palettes, lighting, millwork, and furnishing plans that feel considered, livable, and unmistakably yours.",
     icon: "sofa",
     highlights: [
-      "Residential & commercial interior design",
+      "Residential interior design & styling",
       "Custom millwork & cabinetry",
       "Lighting & materials specification",
       "Furniture, fixtures & equipment (FF&E)",
@@ -128,87 +128,74 @@ export type Project = {
   slug: string;
   name: string;
   location: string;
-  category: "Residential" | "Commercial" | "Interiors";
+  category: "Residential" | "Renovation" | "Interiors";
   year: string;
   size: string;
   summary: string;
   description: string;
+  image: string;
   featured: boolean;
 };
 
+// NOTE: These four projects use your real project photography (vv1–vv4.jpg),
+// but the names, exact localities, sizes, and years are placeholders —
+// swap in your actual project details whenever you have them.
 export const projects: Project[] = [
   {
-    slug: "horizon-residence",
-    name: "Horizon Residence",
-    location: "Los Angeles, CA",
-    category: "Residential",
-    year: "2024",
-    size: "6,200 sq ft",
-    summary: "A hillside home built around glass, light, and the horizon line.",
-    description:
-      "Set into a sloped hillside lot, Horizon Residence uses cantilevered volumes and full-height glazing to frame uninterrupted views while keeping the home's footprint light on the land. Passive cooling, a native landscape plan, and an integrated pool terrace complete the composition.",
-    featured: true,
-  },
-  {
-    slug: "aurora-office-tower",
-    name: "Aurora Office Tower",
-    location: "New York, NY",
-    category: "Commercial",
-    year: "2023",
-    size: "180,000 sq ft",
-    summary: "A 22-story commercial tower engineered for modern hybrid work.",
-    description:
-      "Aurora Office Tower delivers column-free floorplates, a triple-height lobby, and a curtain wall system tuned for daylight and energy performance, giving tenants flexible, healthy space in the heart of the city.",
-    featured: true,
-  },
-  {
-    slug: "edgewood-villa",
-    name: "Edgewood Villa",
-    location: "Austin, TX",
+    slug: "padappai-garden-villa",
+    name: "Padappai Garden Villa",
+    location: "Padappai, Chennai",
     category: "Residential",
     year: "2023",
-    size: "5,400 sq ft",
+    size: "3,200 sq ft",
     summary:
-      "A courtyard villa balancing indoor-outdoor living with Texas heat.",
+      "A palm-shaded family villa built around stone cladding, courtyards, and natural light.",
     description:
-      "Edgewood Villa wraps a shaded central courtyard with deep overhangs, cross-ventilated living spaces, and locally sourced limestone, delivering a resilient home tuned to its climate without sacrificing openness.",
+      "Set behind a gated compound wall and shaded by mature palms and frangipani trees, this two-storey family villa pairs a clean white plaster facade with local stone cladding at the entrance. Louvred wooden screens filter light into the upper-floor bedrooms, while a covered veranda extends the living area into the garden.",
+    image: "/vv1.jpg",
     featured: true,
   },
   {
-    slug: "maple-street-residences",
-    name: "Maple Street Residences",
-    location: "Seattle, WA",
+    slug: "tambaram-modern-residence",
+    name: "Tambaram Modern Residence",
+    location: "Tambaram, Chennai",
     category: "Residential",
-    year: "2022",
-    size: "48 units",
-    summary: "A boutique multifamily building woven into an established block.",
+    year: "2024",
+    size: "2,800 sq ft",
+    summary:
+      "A contemporary home in board-formed concrete and timber louvres, built for the evening light.",
     description:
-      "Maple Street Residences adds 48 thoughtfully scaled units to an existing Seattle neighborhood, with a brick and timber palette chosen to sit comfortably alongside its older neighbors while meeting modern efficiency standards.",
+      "Designed around a double-height entrance and a landscaped front lawn, this residence uses exposed concrete, warm timber slat screens, and full-height glazing to stay bright by day and glow from within after dark. A covered carport and paved driveway complete the street-facing elevation.",
+    image: "/vv3.jpg",
     featured: true,
   },
   {
-    slug: "birchwood-corporate-campus",
-    name: "Birchwood Corporate Campus",
-    location: "Denver, CO",
-    category: "Commercial",
+    slug: "south-chennai-heritage-restoration",
+    name: "Heritage Home Restoration",
+    location: "South Chennai",
+    category: "Renovation",
     year: "2022",
-    size: "95,000 sq ft",
-    summary: "A three-building campus organized around a shared central green.",
+    size: "2,400 sq ft",
+    summary:
+      "A sensitive restoration that revived a traditional veranda-and-courtyard home for modern living.",
     description:
-      "Birchwood Corporate Campus links three low-rise office buildings around a landscaped commons, encouraging movement between teams while giving each building its own identity and daylighting strategy.",
-    featured: false,
+      "This restoration preserved the character of a traditional red-oxide veranda — timber columns, a hanging swing, and terracotta roof tiles — while quietly upgrading the structure, wiring, and waterproofing behind the scenes. The result keeps a family's original home intact for another generation.",
+    image: "/vv4.jpg",
+    featured: true,
   },
   {
-    slug: "the-linden-penthouse",
-    name: "The Linden Penthouse",
-    location: "Chicago, IL",
+    slug: "contemporary-interior-fit-out",
+    name: "Contemporary Interior Fit-Out",
+    location: "Chennai",
     category: "Interiors",
-    year: "2024",
-    size: "3,100 sq ft",
-    summary: "A full interior renovation of a top-floor penthouse residence.",
+    year: "2023",
+    size: "1,800 sq ft",
+    summary:
+      "A warm, materials-first interior featuring cane furniture, jaali screens, and courtyard views.",
     description:
-      "The Linden Penthouse interior program reworks circulation, opens the kitchen to a reconfigured living room, and introduces a warm material palette of white oak, honed stone, and brushed brass throughout.",
-    featured: false,
+      "This interior fit-out pairs a restrained material palette — polished cement flooring, teak furniture, and a hand-carved jaali screen — with large garden-facing windows that keep the living area connected to greenery throughout the day.",
+    image: "/vv2.jpg",
+    featured: true,
   },
 ];
 
@@ -299,13 +286,13 @@ export const faqs = [
   {
     question: "What areas does VV Builders serve?",
     answer:
-      "VV Builders takes on residential, commercial, and interiors projects nationwide, with active project teams currently based in New York, Los Angeles, Austin, Seattle, Denver, and Chicago.",
+      "VV Builders takes on residential construction, villa, renovation, and home-extension projects across South Chennai, including Padappai, Tambaram, and the surrounding areas of Tamil Nadu.",
   },
   {
     question:
       "How long does a typical project take, from design to completion?",
     answer:
-      "Timelines vary by scope. A custom home typically runs 10–16 months from initial concept to move-in, while commercial builds and multifamily developments range from 14–30 months depending on size and permitting.",
+      "Timelines vary by scope. A custom home or villa typically runs 8–14 months from initial concept to move-in, while renovations and home extensions usually take 3–8 months depending on size and permitting.",
   },
   {
     question: "Does VV Builders handle both architecture and construction?",

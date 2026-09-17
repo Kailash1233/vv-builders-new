@@ -111,10 +111,25 @@ export function ClipboardIcon({ className }: IconProps) {
   );
 }
 
+export function RenovateIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M14.5 6.5 17.5 3.5a2 2 0 0 1 2.8 2.8L17.3 9.3M14.5 6.5 4 17v3h3L17.3 9.3M14.5 6.5l2.8 2.8"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M4.5 19.5 3 21" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export const serviceIcons = {
   compass: CompassIcon,
   home: HomeIcon,
-  building: BuildingIcon,
+  renovate: RenovateIcon,
   sofa: SofaIcon,
   clipboard: ClipboardIcon,
 };
@@ -152,6 +167,15 @@ export function TwitterIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <path d="M4 4l7 8.5L4.3 20H6.7l5.4-6.1L16.5 20H20l-7.4-9L19.3 4h-2.4l-4.9 5.6L7.5 4H4z" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function DownloadIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M12 4v11.5M7.5 11l4.5 4.5 4.5-4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5 17.5V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

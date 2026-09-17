@@ -11,7 +11,7 @@ import { aboutImage } from "@/lib/images";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about VV Builders — a design-build studio delivering residential, commercial, and interior projects for over 15 years, built on craftsmanship and client trust.",
+    "Learn about V.V Builders — a Chennai-based design-build studio delivering residential construction, villas, renovations, and interior projects for over 15 years.",
   alternates: { canonical: "/about" },
 };
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
         ]}
       />
 
-      <section className="bg-cream-50 py-24">
+      <section className="bg-cream-50 py-20 sm:py-24 lg:py-32">
         <div className="container-px grid lg:grid-cols-2 gap-14 items-center">
           <div>
             <p className="text-[11px] font-semibold tracking-[0.24em] uppercase mb-3 text-gold-600">
@@ -76,9 +76,9 @@ export default function AboutPage() {
               listening, and ends with a space our clients are proud to call home or business.
             </p>
             <p className="mt-4 text-ink-500 leading-relaxed">
-              Today our teams deliver residential, commercial, and interiors projects across the
-              country, backed by in-house architects, licensed builders, and dedicated project
-              managers who carry each project from first sketch to final walkthrough.
+              Today our team delivers residential construction, villas, renovations, and interior
+              fit-outs across South Chennai — from Padappai and Tambaram to the surrounding
+              areas of Tamil Nadu — carrying each project from first sketch to final walkthrough.
             </p>
           </div>
           <BuildingArt
@@ -90,7 +90,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-navy-950 text-cream-50 py-20 grain">
+      <section className="bg-navy-950 text-cream-50 py-20 sm:py-24 lg:py-28 grain">
         <div className="container-px grid grid-cols-2 sm:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
@@ -101,7 +101,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-cream-100 py-24">
+      <section className="bg-cream-100 py-20 sm:py-24 lg:py-32">
         <div className="container-px">
           <SectionHeading eyebrow="What Drives Us" title="Our Values" align="center" />
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -118,7 +118,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="process" className="bg-cream-50 py-24 scroll-mt-24">
+      <section id="process" className="bg-cream-50 py-20 sm:py-24 lg:py-32 scroll-mt-24">
         <div className="container-px">
           <SectionHeading
             eyebrow="Our Process"

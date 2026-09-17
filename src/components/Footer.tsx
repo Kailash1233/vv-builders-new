@@ -100,8 +100,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <PinIcon className="w-4 h-4 mt-0.5 text-gold-400 shrink-0" />
                 <span>
-                  {site.address.street}, {site.address.city},{" "}
-                  {site.address.region} {site.address.postal}
+                  {site.address.street}, {site.address.city}, {site.address.region}
+                  {site.address.postal ? ` ${site.address.postal}` : ""}
                 </span>
               </li>
             </ul>

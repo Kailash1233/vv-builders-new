@@ -10,7 +10,7 @@ import { serviceImages } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore VV Builders' end-to-end services: architecture, residential construction, commercial builds, interiors, and project management under one design-build studio.",
+    "Explore V.V Builders' end-to-end services: architecture, residential construction, renovation and home extensions, interiors, and project management under one design-build studio.",
   alternates: { canonical: "/services" },
 };
 
@@ -57,7 +57,7 @@ export default function ServicesPage() {
         ]}
       />
 
-      <section className="bg-cream-50 py-24">
+      <section className="bg-cream-50 py-20 sm:py-24 lg:py-32">
         <div className="container-px space-y-20">
           {services.map((service, index) => {
             const Icon = serviceIcons[service.icon];

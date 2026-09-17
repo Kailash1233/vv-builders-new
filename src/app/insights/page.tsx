@@ -37,7 +37,7 @@ export default function InsightsPage() {
         ]}
       />
 
-      <section className="bg-cream-50 py-24">
+      <section className="bg-cream-50 py-20 sm:py-24 lg:py-32">
         <div className="container-px grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {articles.map((article, i) => (
             <ArticleCard key={article.slug} article={article} variant={i} />
