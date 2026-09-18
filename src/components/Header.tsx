@@ -119,12 +119,10 @@ export function Header() {
                   <div className="flex items-center gap-3 mt-4 pt-4 border-t border-white/10">
                     {[
                       { Icon: WhatsAppIcon, href: `https://wa.me/${site.whatsappNumber}`, label: "WhatsApp" },
-                      { Icon: FacebookIcon, href: site.social.facebook, label: "Facebook" },
-                      { Icon: InstagramIcon, href: site.social.instagram, label: "Instagram" },
-                      { Icon: YouTubeIcon, href: site.social.youtube, label: "YouTube" },
-                    ]
-                      .filter((item) => item.href)
-                      .map(({ Icon, href, label }) => (
+                      { Icon: FacebookIcon, href: site.social.facebook || "#", label: "Facebook" },
+                      { Icon: InstagramIcon, href: site.social.instagram || "#", label: "Instagram" },
+                      { Icon: YouTubeIcon, href: site.social.youtube || "#", label: "YouTube" },
+                    ].map(({ Icon, href, label }) => (
                         <a
                           key={label}
                           href={href}

@@ -22,15 +22,15 @@ const sitemap = [
 ];
 
 const socialLinks = [
-  { Icon: FacebookIcon, href: site.social.facebook, label: "Facebook" },
-  { Icon: InstagramIcon, href: site.social.instagram, label: "Instagram" },
-  { Icon: YouTubeIcon, href: site.social.youtube, label: "YouTube" },
+  { Icon: FacebookIcon, href: site.social.facebook || "#", label: "Facebook" },
+  { Icon: InstagramIcon, href: site.social.instagram || "#", label: "Instagram" },
+  { Icon: YouTubeIcon, href: site.social.youtube || "#", label: "YouTube" },
   {
     Icon: WhatsAppIcon,
     href: `https://wa.me/${site.whatsappNumber}`,
     label: "WhatsApp",
   },
-].filter((item) => item.href);
+];
 
 export function Footer() {
   return (

@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { PageHero } from "@/components/PageHero";
 import { ContactForm } from "@/components/ContactForm";
-import { MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
+import {
+  MailIcon,
+  PhoneIcon,
+  PinIcon,
+  FacebookIcon,
+  InstagramIcon,
+  YouTubeIcon,
+  WhatsAppIcon,
+} from "@/components/icons";
 import { site } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { contactImage } from "@/lib/images";
@@ -93,6 +101,29 @@ export default function ContactPage() {
                 </div>
               </li>
             </ul>
+
+            <div className="mt-8">
+              <p className="text-ink-500 text-xs uppercase tracking-wide mb-3">Follow Us</p>
+              <div className="flex items-center gap-3">
+                {[
+                  { Icon: WhatsAppIcon, href: `https://wa.me/${site.whatsappNumber}`, label: "WhatsApp" },
+                  { Icon: FacebookIcon, href: site.social.facebook || "#", label: "Facebook" },
+                  { Icon: InstagramIcon, href: site.social.instagram || "#", label: "Instagram" },
+                  { Icon: YouTubeIcon, href: site.social.youtube || "#", label: "YouTube" },
+                ].map(({ Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-9 h-9 rounded-full bg-navy-950 text-gold-400 flex items-center justify-center hover:bg-gold-400 hover:text-navy-950 transition-colors"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
 
             <div
               className="mt-10 h-56 rounded-lg relative overflow-hidden"
