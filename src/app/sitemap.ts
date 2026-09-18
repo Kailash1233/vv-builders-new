@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { site, projects, articles } from "@/lib/site";
+import { site, completedProjects, articles } from "@/lib/site";
+import { locations } from "@/lib/locations";
 
 export const dynamic = "force-static";
 
@@ -15,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/terms-of-service`, changeFrequency: "yearly", priority: 0.2 },
   ];
 
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
+  const projectRoutes: MetadataRoute.Sitemap = completedProjects.map((project) => ({
     url: `${site.url}/projects/${project.slug}`,
     changeFrequency: "monthly",
     priority: 0.7,
@@ -28,5 +29,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...projectRoutes, ...articleRoutes];
+  const locationRoutes: MetadataRoute.Sitemap = locations.map((location) => ({
+    url: `${site.url}/locations/${location.slug}`,
+    changeFrequency: "monthly",
+    priority: location.isPrimary ? 0.9 : 0.75,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...articleRoutes, ...locationRoutes];
 }

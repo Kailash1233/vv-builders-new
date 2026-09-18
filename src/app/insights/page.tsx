@@ -8,7 +8,7 @@ import { breadcrumbJsonLd } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Ideas, trends, and inspiration from VV Builders — sustainable architecture, adaptive residential design, and the materials shaping the future of construction.",
+    "Practical, Chennai-specific guidance on construction costs, approvals, monsoon-proofing, and renovation decisions — written for homeowners building across South Chennai.",
   alternates: { canonical: "/insights" },
 };
 
@@ -29,12 +29,13 @@ export default function InsightsPage() {
       />
       <PageHero
         eyebrow="Insights"
-        title="Ideas. Trends. Inspiration."
-        description="Perspectives from our architects, builders, and project managers on the ideas shaping the future of design and construction."
+        title="Straight Answers for Chennai Homeowners"
+        description="What construction actually costs, which approval applies to your plot, how to build for the monsoon, and what to ask before you hire a builder."
         breadcrumbs={[
           { href: "/", label: "Home" },
           { href: "/insights", label: "Insights" },
         ]}
+        bgImage="/vv4.jpg"
       />
 
       <section className="bg-cream-50 py-20 sm:py-24 lg:py-32">

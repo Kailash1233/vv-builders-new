@@ -7,8 +7,8 @@ import { site } from "@/lib/site";
 const projectTypes = [
   "Residential Construction",
   "Villa Construction",
+  "Commercial Construction",
   "Renovation / Home Extension",
-  "Interiors",
   "Other",
 ];
 

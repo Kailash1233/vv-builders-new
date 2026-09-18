@@ -127,10 +127,9 @@ export function RenovateIcon({ className }: IconProps) {
 }
 
 export const serviceIcons = {
-  compass: CompassIcon,
   home: HomeIcon,
+  building: BuildingIcon,
   renovate: RenovateIcon,
-  sofa: SofaIcon,
   clipboard: ClipboardIcon,
 };
 
@@ -154,19 +153,40 @@ export function InstagramIcon({ className }: IconProps) {
   );
 }
 
-export function PinterestIcon({ className }: IconProps) {
+export function FacebookIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.3" />
-      <path d="M10 17.5c.5-2 1.2-5 1.2-5m0 0c-.4-.8-.5-2.4.5-3.1 1.3-.9 2.7.1 2.7 1.7 0 1.1-.7 2.7-1.1 3.6-.3.8.3 1.5 1.1 1.5 1.4 0 2.4-1.8 2.4-3.9 0-2-1.4-3.5-3.8-3.5-2.6 0-4.2 1.9-4.2 3.9 0 .7.3 1.5.6 1.9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <path
+        d="M13.5 21V13h2.2l.3-2.6h-2.5V8.8c0-.75.2-1.26 1.28-1.26h1.37V5.2c-.24-.03-1.05-.1-2-.1-1.97 0-3.32 1.2-3.32 3.42v1.9H8.5V13h2.28v8"
+        fill="currentColor"
+      />
     </svg>
   );
 }
 
-export function TwitterIcon({ className }: IconProps) {
+export function YouTubeIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path d="M4 4l7 8.5L4.3 20H6.7l5.4-6.1L16.5 20H20l-7.4-9L19.3 4h-2.4l-4.9 5.6L7.5 4H4z" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="currentColor" />
+      <rect x="2.5" y="6" width="19" height="12" rx="3.5" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M10.3 9.3v5.4l4.8-2.7-4.8-2.7z" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function WhatsAppIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M12 3.5a8.4 8.4 0 0 0-7.2 12.7L3.5 20.5l4.4-1.3A8.4 8.4 0 1 0 12 3.5z"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 8.3c.2-.4.4-.4.6-.4h.5c.15 0 .35 0 .5.4.2.5.65 1.6.7 1.75.06.13.1.3 0 .47-.08.18-.13.28-.26.43-.13.15-.27.34-.4.46-.13.13-.27.27-.12.53.15.27.68 1.13 1.47 1.83.99.9 1.83 1.18 2.1 1.31.27.13.43.11.6-.06.16-.18.68-.78.86-1.05.18-.27.36-.22.6-.13.27.1 1.65.78 1.93.92.27.13.46.2.52.32.06.13.06.72-.18 1.4-.24.68-1.4 1.3-1.93 1.35-.5.05-1.02.24-3.42-.72-2.9-1.17-4.72-4.1-4.87-4.3-.14-.2-1.16-1.54-1.16-2.94 0-1.4.75-2.08 1-2.36z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
@@ -201,6 +221,22 @@ export function PhoneIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <path d="M6 4.5h2.6l1.2 4-2 1.5a10 10 0 0 0 5.2 5.2l1.5-2 4 1.2V17a2.5 2.5 0 0 1-2.7 2.5A15.5 15.5 0 0 1 3.5 7.2 2.5 2.5 0 0 1 6 4.5z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function PlayIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M8 5.5v13l11-6.5-11-6.5z" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function CloseIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }

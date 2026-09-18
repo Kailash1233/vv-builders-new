@@ -41,7 +41,7 @@ export default async function Image() {
           We Build Timeless Spaces. Built Around You.
         </div>
         <div style={{ display: "flex", fontSize: 26, opacity: 0.75, marginTop: 28, fontFamily: "sans-serif" }}>
-          Architecture · Construction · Interiors
+          Residential · Commercial · Renovation
         </div>
       </div>
     ),

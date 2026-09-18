@@ -6,12 +6,12 @@ import { PageHero } from "@/components/PageHero";
 import { BuildingArt } from "@/components/BuildingArt";
 import { ProjectCard } from "@/components/ProjectCard";
 import { DownloadPortfolioButton } from "@/components/DownloadPortfolioButton";
-import { ArrowIcon } from "@/components/icons";
-import { projects, site } from "@/lib/site";
+import { ArrowIcon, CheckIcon, MedalIcon, BuildingIcon, RenovateIcon } from "@/components/icons";
+import { projects, completedProjects, site } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return completedProjects.map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({
@@ -33,6 +33,12 @@ export async function generateMetadata({
   };
 }
 
+const categoryIcons = {
+  Residential: MedalIcon,
+  Commercial: BuildingIcon,
+  Renovation: RenovateIcon,
+} as const;
+
 export default async function ProjectDetailPage({
   params,
 }: {
@@ -42,8 +48,10 @@ export default async function ProjectDetailPage({
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
+  const isOngoing = project.status === "Ongoing";
   const variant = projects.findIndex((p) => p.slug === project.slug);
-  const related = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
+  const related = completedProjects.filter((p) => p.slug !== project.slug).slice(0, 3);
+  const CategoryIcon = categoryIcons[project.category];
 
   const projectJsonLd = {
     "@context": "https://schema.org",
@@ -77,7 +85,7 @@ export default async function ProjectDetailPage({
         }}
       />
       <PageHero
-        eyebrow={project.category}
+        eyebrow={isOngoing ? `${project.category} · In Progress` : project.category}
         title={project.name}
         description={project.summary}
         breadcrumbs={[
@@ -85,6 +93,7 @@ export default async function ProjectDetailPage({
           { href: "/projects", label: "Projects" },
           { href: `/projects/${project.slug}`, label: project.name },
         ]}
+        bgImage={project.image || undefined}
       />
 
       <section className="bg-cream-50 py-16 sm:py-20 lg:py-24">
@@ -96,14 +105,51 @@ export default async function ProjectDetailPage({
               alt={`${project.name} — ${project.location}`}
               className="h-72 sm:h-96 rounded-lg"
             />
+
+            {project.gallery && project.gallery.length > 0 && (
+              <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {project.gallery.map((photo, i) => (
+                  <BuildingArt
+                    key={photo + i}
+                    variant={variant + i + 1}
+                    photo={photo}
+                    alt={`${project.name} — additional view ${i + 1}`}
+                    className="h-32 sm:h-40 rounded-lg"
+                  />
+                ))}
+              </div>
+            )}
+
             <div className="mt-10">
               <h2 className="font-display text-2xl sm:text-3xl">Project Overview</h2>
               <p className="mt-4 text-ink-500 leading-relaxed">{project.description}</p>
             </div>
+
+            {project.highlights && project.highlights.length > 0 && (
+              <div className="mt-10">
+                <h2 className="font-display text-2xl sm:text-3xl">
+                  Why This Project Stands Out
+                </h2>
+                <ul className="mt-5 grid sm:grid-cols-2 gap-4">
+                  {project.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex items-start gap-3 text-sm bg-cream-100 rounded-lg p-4"
+                    >
+                      <CheckIcon className="w-4.5 h-4.5 text-gold-600 mt-0.5 shrink-0" />
+                      <span className="text-ink-700">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
-          <aside className="bg-cream-100 rounded-lg p-8 h-fit">
-            <h3 className="font-display text-xl mb-6">Project Details</h3>
+          <aside className="bg-cream-100 rounded-lg p-8 h-fit lg:sticky lg:top-28">
+            <h3 className="font-display text-xl mb-6 flex items-center gap-2.5">
+              <CategoryIcon className="w-5 h-5 text-gold-600" />
+              Project Details
+            </h3>
             <dl className="space-y-5 text-sm">
               <div className="flex justify-between gap-4 border-b border-ink-900/10 pb-3">
                 <dt className="text-ink-500">Location</dt>
@@ -118,7 +164,9 @@ export default async function ProjectDetailPage({
                 <dd className="font-medium text-right">{project.size}</dd>
               </div>
               <div className="flex justify-between gap-4">
-                <dt className="text-ink-500">Completed</dt>
+                <dt className="text-ink-500">
+                  {isOngoing ? "Expected Completion" : "Completed"}
+                </dt>
                 <dd className="font-medium text-right">{project.year}</dd>
               </div>
             </dl>
@@ -138,16 +186,22 @@ export default async function ProjectDetailPage({
         </div>
       </section>
 
-      <section className="bg-cream-100 py-16 sm:py-20 lg:py-24">
-        <div className="container-px">
-          <h2 className="font-display text-2xl sm:text-3xl mb-10">More Projects</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
-            {related.map((p) => (
-              <ProjectCard key={p.slug} project={p} variant={projects.findIndex((x) => x.slug === p.slug)} />
-            ))}
+      {related.length > 0 && (
+        <section className="bg-cream-100 py-16 sm:py-20 lg:py-24">
+          <div className="container-px">
+            <h2 className="font-display text-2xl sm:text-3xl mb-10">More Projects</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
+              {related.map((p) => (
+                <ProjectCard
+                  key={p.slug}
+                  project={p}
+                  variant={projects.findIndex((x) => x.slug === p.slug)}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }

@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { site } from "@/lib/site";
+import { secondaryLocations } from "@/lib/locations";
 import {
   MailIcon,
   PhoneIcon,
   PinIcon,
-  LinkedInIcon,
+  FacebookIcon,
   InstagramIcon,
-  PinterestIcon,
-  TwitterIcon,
+  YouTubeIcon,
+  WhatsAppIcon,
   ArrowIcon,
 } from "@/components/icons";
 
@@ -19,6 +20,17 @@ const sitemap = [
   { href: "/insights", label: "Insights" },
   { href: "/contact", label: "Contact" },
 ];
+
+const socialLinks = [
+  { Icon: FacebookIcon, href: site.social.facebook, label: "Facebook" },
+  { Icon: InstagramIcon, href: site.social.instagram, label: "Instagram" },
+  { Icon: YouTubeIcon, href: site.social.youtube, label: "YouTube" },
+  {
+    Icon: WhatsAppIcon,
+    href: `https://wa.me/${site.whatsappNumber}`,
+    label: "WhatsApp",
+  },
+].filter((item) => item.href);
 
 export function Footer() {
   return (
@@ -38,29 +50,17 @@ export function Footer() {
             <rect x="315" y="120" width="60" height="160" />
             <line x1="0" y1="280" x2="400" y2="280" />
             {Array.from({ length: 6 }).map((_, i) => (
-              <line
-                key={`h1-${i}`}
-                x1="45"
-                y1={150 + i * 20}
-                x2="95"
-                y2={150 + i * 20}
-              />
+              <line key={`h1-${i}`} x1="45" y1={150 + i * 20} x2="95" y2={150 + i * 20} />
             ))}
             {Array.from({ length: 8 }).map((_, i) => (
-              <line
-                key={`h2-${i}`}
-                x1="255"
-                y1={70 + i * 25}
-                x2="300"
-                y2={70 + i * 25}
-              />
+              <line key={`h2-${i}`} x1="255" y1={70 + i * 25} x2="300" y2={70 + i * 25} />
             ))}
           </g>
         </svg>
       </div>
 
       <div className="relative container-px pt-20 pb-10">
-        <div className="grid gap-14 lg:grid-cols-[1.3fr_1fr_1fr] pb-16 border-b border-white/10">
+        <div className="grid gap-14 lg:grid-cols-[1.3fr_1fr_1fr] pb-14 border-b border-white/10">
           <div>
             <h2 className="font-display text-3xl sm:text-4xl text-balance max-w-md">
               Let&apos;s Build Something Extraordinary
@@ -81,20 +81,25 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-cream-100/80">
               <li className="flex items-start gap-3">
                 <MailIcon className="w-4 h-4 mt-0.5 text-gold-400 shrink-0" />
-                <a
-                  href={`mailto:${site.email}`}
-                  className="hover:text-cream-50"
-                >
+                <a href={`mailto:${site.email}`} className="hover:text-cream-50">
                   {site.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <PhoneIcon className="w-4 h-4 mt-0.5 text-gold-400 shrink-0" />
+                <a href={`tel:${site.phoneRaw}`} className="hover:text-cream-50">
+                  {site.phone}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <WhatsAppIcon className="w-4 h-4 mt-0.5 text-gold-400 shrink-0" />
                 <a
-                  href={`tel:${site.phoneRaw}`}
+                  href={`https://wa.me/${site.whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-cream-50"
                 >
-                  {site.phone}
+                  Chat on WhatsApp
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -105,64 +110,59 @@ export function Footer() {
                 </span>
               </li>
             </ul>
-            <div className="flex items-center gap-4 mt-6">
-              {[
-                {
-                  Icon: LinkedInIcon,
-                  href: site.social.linkedin,
-                  label: "LinkedIn",
-                },
-                {
-                  Icon: InstagramIcon,
-                  href: site.social.instagram,
-                  label: "Instagram",
-                },
-                {
-                  Icon: PinterestIcon,
-                  href: site.social.pinterest,
-                  label: "Pinterest",
-                },
-                {
-                  Icon: TwitterIcon,
-                  href: site.social.twitter,
-                  label: "Twitter / X",
-                },
-              ].map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-8 h-8 flex items-center justify-center border border-white/15 rounded-full text-cream-100/80 hover:text-navy-950 hover:bg-gold-400 hover:border-gold-400 transition-colors"
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                </a>
-              ))}
-            </div>
+            {socialLinks.length > 0 && (
+              <div className="flex items-center gap-4 mt-6">
+                {socialLinks.map(({ Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-8 h-8 flex items-center justify-center border border-white/15 rounded-full text-cream-100/80 hover:text-navy-950 hover:bg-gold-400 hover:border-gold-400 transition-colors"
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           <div>
             <Logo variant="light" />
             <p className="mt-5 text-sm text-cream-100/70 max-w-xs">
-              V.V Builders is a builders and construction company based in
-              Padappai, Tambaram, Chennai, Tamil Nadu, working on residential
-              construction, villas, renovation and home extensions across South
-              Chennai.
+              V.V Builders is a construction company based in Padappai, Tambaram, Chennai,
+              Tamil Nadu, building homes, villas, renovations and home extensions across
+              South Chennai.
             </p>
             <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
               {sitemap.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-cream-100/80 hover:text-gold-400"
-                  >
+                  <Link href={item.href} className="text-cream-100/80 hover:text-gold-400">
                     {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="py-10 border-b border-white/10">
+          <Link
+            href="/locations/chennai"
+            className="inline-block text-[11px] tracking-[0.2em] uppercase text-gold-400 font-semibold mb-4 hover:text-gold-300"
+          >
+            Areas We Serve in Chennai
+          </Link>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2.5 text-sm text-cream-100/70">
+            {secondaryLocations.map((location) => (
+              <li key={location.slug}>
+                <Link href={`/locations/${location.slug}`} className="hover:text-gold-400">
+                  {location.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-100/50">
@@ -177,6 +177,22 @@ export function Footer() {
               Terms of Service
             </Link>
           </div>
+        </div>
+
+        <div className="pt-6 text-center text-[11px] text-cream-100/40">
+          Designed &amp; developed with{" "}
+          <span aria-hidden="true" className="text-gold-400">
+            ♥
+          </span>
+          <span className="sr-only">love</span> by{" "}
+          <a
+            href="https://adszoo.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cream-100/60 hover:text-gold-400 underline underline-offset-2"
+          >
+            Adszoo
+          </a>
         </div>
       </div>
     </footer>

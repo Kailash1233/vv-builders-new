@@ -9,10 +9,10 @@ import {
   DotsIcon,
   MailIcon,
   PhoneIcon,
-  LinkedInIcon,
+  FacebookIcon,
   InstagramIcon,
-  PinterestIcon,
-  TwitterIcon,
+  YouTubeIcon,
+  WhatsAppIcon,
 } from "@/components/icons";
 
 const navLinks = [
@@ -118,22 +118,24 @@ export function Header() {
                   </ul>
                   <div className="flex items-center gap-3 mt-4 pt-4 border-t border-white/10">
                     {[
-                      { Icon: LinkedInIcon, href: site.social.linkedin, label: "LinkedIn" },
+                      { Icon: WhatsAppIcon, href: `https://wa.me/${site.whatsappNumber}`, label: "WhatsApp" },
+                      { Icon: FacebookIcon, href: site.social.facebook, label: "Facebook" },
                       { Icon: InstagramIcon, href: site.social.instagram, label: "Instagram" },
-                      { Icon: PinterestIcon, href: site.social.pinterest, label: "Pinterest" },
-                      { Icon: TwitterIcon, href: site.social.twitter, label: "Twitter / X" },
-                    ].map(({ Icon, href, label }) => (
-                      <a
-                        key={label}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={label}
-                        className="w-8 h-8 flex items-center justify-center border border-white/15 rounded-full text-cream-100/80 hover:text-navy-950 hover:bg-gold-400 hover:border-gold-400 transition-colors"
-                      >
-                        <Icon className="w-3.5 h-3.5" />
-                      </a>
-                    ))}
+                      { Icon: YouTubeIcon, href: site.social.youtube, label: "YouTube" },
+                    ]
+                      .filter((item) => item.href)
+                      .map(({ Icon, href, label }) => (
+                        <a
+                          key={label}
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={label}
+                          className="w-8 h-8 flex items-center justify-center border border-white/15 rounded-full text-cream-100/80 hover:text-navy-950 hover:bg-gold-400 hover:border-gold-400 transition-colors"
+                        >
+                          <Icon className="w-3.5 h-3.5" />
+                        </a>
+                      ))}
                   </div>
                 </div>
               </>

@@ -4,7 +4,9 @@ import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { site } from "@/lib/site";
+import { secondaryLocations } from "@/lib/locations";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -30,13 +32,14 @@ export const metadata: Metadata = {
   description: site.description,
   keywords: [
     "V.V Builders",
-    "builders in Chennai",
-    "construction company Tambaram",
+    "best construction company in Chennai",
+    "construction company in Tambaram",
+    "builders in Padappai",
     "villa construction Chennai",
     "home renovation Chennai",
-    "residential construction Padappai",
-    "interior design build Chennai",
-    "home extension contractor",
+    "commercial construction Chennai",
+    "home extension contractor Chennai",
+    "residential builders Chromepet Pallavaram",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -94,16 +97,19 @@ const organizationJsonLd = {
     streetAddress: site.address.street,
     addressLocality: site.address.city,
     addressRegion: site.address.region,
-    postalCode: site.address.postal,
-    addressCountry: site.address.country,
+    ...(site.address.postal ? { postalCode: site.address.postal } : {}),
+    addressCountry: "IN",
   },
   sameAs: [
-    site.social.linkedin,
+    site.social.facebook,
     site.social.instagram,
-    site.social.pinterest,
-    site.social.twitter,
+    site.social.youtube,
+    `https://wa.me/${site.whatsappNumber}`,
+  ].filter(Boolean),
+  areaServed: [
+    "Chennai",
+    ...secondaryLocations.map((location) => location.name),
   ],
-  areaServed: "US",
 };
 
 export default function RootLayout({
@@ -129,6 +135,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <WhatsAppWidget />
       </body>
     </html>
   );

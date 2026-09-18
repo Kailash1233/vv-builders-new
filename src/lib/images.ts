@@ -3,16 +3,17 @@ function unsplash(id: string, width = 1600, quality = 80) {
 }
 
 export const articleImages: Record<string, string> = {
-  "future-of-sustainable-architecture": unsplash("1518005020951-eccb494ad742", 1200),
-  "designing-homes-that-adapt-to-you": unsplash("1600210492486-724fe5c67fb0", 1200),
-  "smart-materials-for-a-better-tomorrow": unsplash("1487958449943-2429e8be8625", 1200),
+  "house-construction-cost-in-chennai": unsplash("1600596542815-ffad4c1539a9", 1200),
+  "cmda-vs-panchayat-approval-chennai": "/vv3.jpg",
+  "monsoon-proofing-construction-gst-road-belt": "/vv1.jpg",
+  "renovate-or-rebuild-chennai-home": "/vv4.jpg",
+  "questions-to-ask-a-builder-in-chennai": "/vv2.jpg",
 };
 
 export const serviceImages: Record<string, string> = {
-  architecture: "/vv3.jpg",
   "residential-construction": "/vv1.jpg",
+  "commercial-construction": unsplash("1497366216548-37526070297c", 1200),
   "renovation-home-extensions": "/vv4.jpg",
-  interiors: "/vv2.jpg",
   "project-management": unsplash("1560518883-ce09059eeffa", 1200),
 };
 

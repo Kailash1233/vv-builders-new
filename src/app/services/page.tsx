@@ -10,7 +10,7 @@ import { serviceImages } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore V.V Builders' end-to-end services: architecture, residential construction, renovation and home extensions, interiors, and project management under one design-build studio.",
+    "Explore V.V Builders' construction services: residential construction, commercial construction, renovation and home extensions, and project management — one builder, one contract.",
   alternates: { canonical: "/services" },
 };
 
@@ -49,12 +49,13 @@ export default function ServicesPage() {
       />
       <PageHero
         eyebrow="Our Services"
-        title="End-to-End Solutions, Under One Roof"
-        description="Integrated expertise across every stage of design and construction — architecture, building, interiors, and management, delivered by one accountable team."
+        title="End-to-End Construction, Under One Roof"
+        description="We are builders first — residential and commercial construction, renovations, and project management, delivered by one accountable team from foundation to handover."
         breadcrumbs={[
           { href: "/", label: "Home" },
           { href: "/services", label: "Services" },
         ]}
+        bgImage="/vv3.jpg"
       />
 
       <section className="bg-cream-50 py-20 sm:py-24 lg:py-32">

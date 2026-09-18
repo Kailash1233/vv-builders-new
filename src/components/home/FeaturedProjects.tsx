@@ -2,12 +2,12 @@ import Link from "next/link";
 import { BuildingArt } from "@/components/BuildingArt";
 import { DownloadPortfolioButton } from "@/components/DownloadPortfolioButton";
 import { ArrowIcon } from "@/components/icons";
-import { projects } from "@/lib/site";
+import { completedProjects } from "@/lib/site";
 
-const featured = projects.filter((p) => p.featured);
+const featured = completedProjects.filter((p) => p.featured);
 
 export function FeaturedProjects() {
-  const [first, second, third, fourth] = featured;
+  const [first, second, third] = featured;
 
   return (
     <section className="bg-cream-50 py-20 sm:py-24 lg:py-32">
@@ -44,26 +44,24 @@ export function FeaturedProjects() {
             className="
               grid
               grid-cols-1
-              sm:grid-cols-2
-              lg:grid-cols-[1.2fr_1.2fr_0.82fr]
+              lg:grid-cols-[1.4fr_1fr]
               gap-3
-              lg:h-[400px]
-              xl:h-[420px]
+              lg:h-[440px]
             "
           >
-            {/* First: Tall */}
+            {/* First: Large */}
             <ProjectTile
               project={first}
               variant={0}
               className="
                 h-[380px]
-                sm:h-[420px]
+                sm:h-[440px]
                 lg:h-full
               "
             />
 
-            {/* Middle column */}
-            <div className="grid grid-cols-1 gap-3 sm:col-span-1 lg:grid-rows-2 lg:h-full">
+            {/* Right column: stacked */}
+            <div className="grid grid-cols-1 gap-3 lg:grid-rows-2 lg:h-full">
               <ProjectTile
                 project={second}
                 variant={1}
@@ -76,19 +74,6 @@ export function FeaturedProjects() {
                 className="h-[240px] sm:h-[205px] lg:h-full"
               />
             </div>
-
-            {/* Fourth: Tall */}
-            <ProjectTile
-              project={fourth}
-              variant={3}
-              className="
-                h-[380px]
-                sm:h-[420px]
-                lg:h-full
-                sm:col-span-2
-                lg:col-span-1
-              "
-            />
           </div>
         </div>
       </div>
@@ -101,7 +86,7 @@ function ProjectTile({
   variant,
   className,
 }: {
-  project: (typeof projects)[number];
+  project: (typeof completedProjects)[number];
   variant: number;
   className?: string;
 }) {

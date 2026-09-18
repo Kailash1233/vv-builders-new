@@ -7,15 +7,34 @@ export function PageHero({
   title,
   description,
   breadcrumbs,
+  bgImage,
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   breadcrumbs: Crumb[];
+  bgImage?: string;
 }) {
   return (
     <section className="relative bg-navy-950 text-cream-50 overflow-hidden grain">
-      <div className="pointer-events-none absolute -right-16 -top-16 w-72 h-72 rounded-full bg-gold-500/10 blur-3xl" />
+      {bgImage && (
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          role="img"
+          aria-label=""
+        >
+          <div className="absolute inset-0 bg-navy-950/75" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-navy-950/50" />
+        </div>
+      )}
+      {!bgImage && (
+        <div className="pointer-events-none absolute -right-16 -top-16 w-72 h-72 rounded-full bg-gold-500/10 blur-3xl" />
+      )}
       <div className="relative container-px pt-32 pb-20 lg:pt-40 lg:pb-24">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-2 text-xs text-cream-100/55 uppercase tracking-wide">

@@ -15,7 +15,7 @@ import {
   type RGB,
   type PDFImage,
 } from "pdf-lib";
-import { site, projects, services, stats } from "../src/lib/site";
+import { site, completedProjects, services, stats } from "../src/lib/site";
 
 const ROOT = join(import.meta.dirname, "..");
 const PUBLIC_DIR = join(ROOT, "public");
@@ -263,7 +263,7 @@ async function main() {
 
   // ---- One page per project --------------------------------------------
   let pageNumber = 2;
-  for (const project of projects) {
+  for (const project of completedProjects) {
     pageNumber += 1;
     const page = pdf.addPage([PAGE_W, PAGE_H]);
     page.drawRectangle({ x: 0, y: 0, width: PAGE_W, height: PAGE_H, color: CREAM });

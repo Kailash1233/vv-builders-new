@@ -48,6 +48,7 @@ export default function ContactPage() {
           { href: "/", label: "Home" },
           { href: "/contact", label: "Contact" },
         ]}
+        bgImage="/vv2.jpg"
       />
 
       <section className="bg-cream-50 py-20 sm:py-24 lg:py-32">
